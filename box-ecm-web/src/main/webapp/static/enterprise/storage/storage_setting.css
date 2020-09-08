@@ -1,0 +1,111 @@
+
+.order-message,.config-message,.config-email-serve-info{
+    height: 32px;
+    border-radius: 3px;
+    background-color: #a9c1d7;
+    color: #ffffff;
+    display: inline-block;
+    padding: 0 10px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
+.save-config-func,.save-config-domain{
+    background-color: #3c95ff;
+    color: #ffffff;
+    margin-left: 20px;
+}
+.personal-domain{
+    border: 1px solid #cfd6d6;
+    border-radius: 3px;
+    width: 200px;
+    line-height: 32px;
+    height: 32px;
+}
+.custom-client-box{
+    border: 1px dashed #3c95ff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.custom-client-header{
+    font-size: 18px;
+    color: #3c95ff;
+    margin-bottom: 10px;
+}
+.custom-client-title{
+    color: #727272;
+    font-size: 16px;
+}
+.cc-item{
+    width: 150px;
+    text-align: center;
+    float: left;
+    font-size: 12px;
+}
+.cc-item .cc-item-name{
+    font-size: 22px;
+    color: #5c7286;
+}
+.cc-icon-windows{
+    width: 39px;
+    height: 37px;
+    margin: 0 auto;
+    margin-bottom: 13px;
+}
+.cc-icon-android{
+    width: 31px;
+    height: 37px;
+    margin: 0 auto;
+    margin-bottom: 13px;
+}
+.cc-icon-iphone{
+    width: 23px;
+    height: 37px;
+    margin: 0 auto;
+    margin-bottom: 13px;
+}
+.cc-icon-ipad{
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+}
+.cc-icon-mac{
+    width: 38px;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.cc-item-update{
+    color: #889097;
+    margin-top: 5px;
+    margin-bottom: 10px; ;
+}
+.cc-item-btn{
+    background-color:#3c95ff;
+    color: #ffffff;
+    width: 80px;
+    margin: 0 auto;
+    border-radius: 3px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.ccn-item{
+    border:1px dashed #3c95ff;
+    padding: 10px;
+    width: 180px;
+    float: left;
+    margin-right: 20px;
+    height: 120px;
+    text-align: center;
+}
+.ccn-icon-offer{
+    width: 33px;
+    height:26px ;
+    margin: 0 auto;
+}
+.ccn-icon-tel{
+    width: 32px; ;
+    height: 24px; ;
+    margin: 0 auto;
+}

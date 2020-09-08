@@ -1,0 +1,59 @@
+<!--内容开始 -->
+<scroll-view scroll-y style="height: {{scrollHeight}}" bindscrolltoupper="upper" bindscrolltolower="lower">
+    <view class='blankBackground' hidden='{{isShowBlankPage?fales:true}}'>
+        <image src='../images/blank/blank-bg.png'></image>
+        <view>矮油，还没有文件</view>
+    </view>
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__bd">
+            <view wx:for="{{folders}}" bindlongpress='showOperation' data-folderinfo="{{item}}" catchtap='onFolderItemClick' wx:key="*this" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" src="{{item.icon}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg left progress">
+                    <view class="weui-media-box__title">{{item.name}}</view>
+                    <!--绑定catch处理函数（不存在的），防止事件冒泡  -->
+                    <block wx:if="{{item.isListAcl}}">
+                        <button data-info='{{item}}' catchtap="onShareButtonClick" open-type="share">
+                            <image src="/disk/images/share-disable.png" />
+                        </button>
+                        
+                        <!-- <button data-info='{{item}}' catchtap="showOperation">
+                            <image style="width:10rpx;height:30rpx;" src="/disk/images/depart-plug.png" />
+                        </button> -->
+                    </block>
+                    <view class="weui-media-box__desc" style='display:inline-block;width:100%;'>
+                        <text style='float:left'>{{item.menderName}}</text>
+                        <text style='float:left;margin:0px 5px;'>|</text>
+                        <text style="float:left">{{item.modifiedTime}}</text>
+                    </view>
+                </view>
+            </view>
+            <view wx:for="{{files}}" bindlongpress='showOperation' data-fileinfo="{{item}}" catchtap='onFileItemClick' wx:key="*this" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" mode='center' src="{{item.icon}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg left">
+                    <view>
+                        <view class="weui-media-box__title">{{item.name}}</view>
+                        <view class="weui-media-box__desc" style='display:inline-block;width:100%;'>
+                            <view style='float:left'>{{item.fileSize}}</view>
+                            <view style='float:left;margin:0px 5px;'>|</view>
+                            <view style="float:left">{{item.modifiedTime}}</view>
+                        </view>
+                    </view>
+                    <!--绑定catch处理函数（不存在的），防止事件冒泡  -->
+                    <button data-info='{{item}}' catchtap="onShareButtonClick" open-type="share">
+                        <image src="/disk/images/share-disable.png" />
+                    </button>
+                    <!-- <button data-info='{{item}}' catchtap="showOperation" >
+                        <image style="width:10rpx;height:30rpx;" src="/disk/images/depart-plug.png" />
+                    </button> -->
+                    
+                    
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<!--内容结束 -->

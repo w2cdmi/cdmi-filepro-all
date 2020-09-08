@@ -1,0 +1,20 @@
+<!--disk/me/share/profitDetail/profitDetail.wxml-->
+<view class='page'>
+    <!--分享收益详情  -->
+    <scroll-view scroll-y="{{true}}" style="height: {{windowHeight}}px;" bindscrolltolower='getMoreList'>
+        <view wx:for='{{profitDetail}}' wx:key="*this" data-item='{{item}}' data-index='{{index}}' class='profit-list'>
+            <view>
+                <view>
+                    <text class='name-text'>{{item.userName}}(比例{{item.proportions}})</text>
+                </view>
+                <text class='date-text'>{{item.date}}</text>
+            </view>
+            <view class='profit-text-align'>
+                <view>
+                    <text class='profit-text'> + {{item.payMoney}}</text>
+                </view>
+                <text class='state-text {{item.status === "打款中" ? "payment" : ""}}'>{{item.status}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

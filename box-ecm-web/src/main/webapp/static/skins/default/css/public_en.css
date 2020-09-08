@@ -1,0 +1,13 @@
+/**
+ * @public style
+ */
+
+/* new bootstrap start ============================================================*/
+
+.sys-content-en .form-horizontal .control-label{width:270px;}
+.sys-content-en .form-horizontal .controls {margin-left: 290px; *margin-left: 0;}
+.sys-content-en .form-horizontal .controls:first-child { *padding-left: 290px;}
+
+.pop-content-en .form-horizontal .control-label{width:220px;}
+.pop-content-en .form-horizontal .controls{margin-left:240px;*margin-left: 0;}
+.pop-content-en .form-horizontal .controls:first-child {*padding-left: 240px;}

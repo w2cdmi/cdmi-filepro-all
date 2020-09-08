@@ -1,0 +1,25 @@
+<!--disk/comments/indextocomments/viewcomments.wxml-->
+<view class='page'>
+    <view class='all_contair' wx:for='{{commentsList}}' data-item='{{item}}' wx:key="*this" bindtap='jumpSharefile'>
+        <view class='avatar_contair comm_contair'>
+            <image src='{{item.eventUser.headImageUrl}}' class='avatar_img'></image>
+        </view>
+        <view class='content-style'>
+            <view class='con_contair comment_txt'>
+                <text style='color:#666;font-size:26rpx;'>{{item.eventUser.name}}</text>
+                <!-- <image mode='aspectFit' src='../../images/comments/黄金会员@2x.png' class='vip_icon'></image> -->
+                <view>
+                    <view class='cotent_txt'>{{item.eventContent.text}}</view>
+                    <text class='comm_txt' style='color:#999;font-size:24rpx;'>{{item.createTime}}</text>
+                </view>
+            </view>
+            <view class='file_info_contair comm_contair'>
+                <image mode='aspectFill' src='{{item.fileImg}}' class='file_image_size'></image>
+                <text class='comm_txt file_title'>{{item.eventObject.id}}</text>
+            </view>
+        </view>
+
+    </view>
+
+    <view catchtap='reuestCommentsMsg' data-type='READED' class='loadMore'>查看更早消息</view>
+</view>

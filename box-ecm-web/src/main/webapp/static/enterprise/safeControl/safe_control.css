@@ -1,0 +1,26 @@
+.terminal-visit-control,.net-visit-control{
+    height: 38px;
+    line-height: 38px;
+    width: 120px;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #3c95ff;
+    background-color: #ffffff;
+}
+.visit-control-active{
+    background-color: #3c95ff;
+    color: #ffffff;
+}
+.visit-control-table{
+    line-height: 50px;
+}
+.visit-control-table .ui-table-cell:nth-child(odd){
+    text-align: center;
+}
+.visit-control-table .ui-table-cell:nth-child(even){
+    text-align: left;
+}

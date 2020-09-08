@@ -1,0 +1,45 @@
+<view class="page-wrap">
+<view style='height:{{topHeight}}px'></view>
+ <scroll-view class="chat-container" bindtap="viewTeamInfo" bindtouchstart="touchStart" bindtouchend="touchEnd" scroll-y style="height:{{scrollHeight}}" scroll-top="{{scrollTop}}">
+        <block wx:for="{{messages}}">
+            <view wx:if="{{item.time != '' || item.type == 'tip'}}" class="messgae-time">
+                <block wx:if="{{item.type=='text'}}">
+                    <view class='message-time-text'>{{item.time}}</view>
+                </block>
+                <block wx:if="{{item.type=='tip'}}">
+                    <view class='message-time-text'>{{item.time}}  {{item.tip}}</view>
+                </block>
+                <block wx:if="{{item.type=='notification'}}">
+                    <view class='message-time-text'>{{item.time}}  {{item.notifyMessage}}</view>
+                </block>
+            </view>
+            <view class="item">
+                <view wx:if="{{item.type != 'notification' && item.type != 'tip'}}" class="message {{item.from==ownerName? 'me' : 'other'}}">
+                    <view>
+                        <view catchtap="viewPersonInfo" class="avatar" data-avatar-url='{{avatarUrls[item.from]}}' data-account='{{item.from}}' style="background-image:url({{avatarUrls[item.from]}})"></view>
+                    </view>
+                    <view class="use-message">
+                        <!-- <view class="nickname">{{item.from}}</view> -->
+                        <view class="content">{{item.text}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+
+    <view class="send-message-panel">
+        <view class='input-panel'>
+            <input bindinput="inputblur" value="{{inputContent}}" cursor-spacing ='0' class="send-input" bindfocus="messageInputFocus" bindblur="messageInputBlur" focus="{{isFocus}}"></input>
+            <view class='part-line'>|</view>
+            <button bindtap="sendMessage" class="send-btn">发送</button>
+        </view>
+
+        <!-- <view class='message-type-panel'>
+            <view><image src='../images/chat/record-icon.png'></image></view>
+            <view><image src='../images/chat/image-selce-icon.png'></image></view>
+            <view><image src='../images/chat/camera-icon.png'></image></view>
+            <view><image src='../images/chat/expression-icon.png'></image></view>
+            <view><image src='../images/chat/chat-icon.png'></image></view>
+        </view> -->
+    </view>
+</view>

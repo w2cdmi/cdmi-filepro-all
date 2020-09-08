@@ -1,0 +1,1 @@
+${operUserName} 将您加入协作空间 ${teamSpaceName}。

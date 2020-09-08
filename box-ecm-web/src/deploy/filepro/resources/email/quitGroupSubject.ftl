@@ -1,0 +1,1 @@
+${operUserName} 已从群组 ${groupName}退出。

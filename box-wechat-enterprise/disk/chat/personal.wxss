@@ -1,0 +1,53 @@
+view{
+    font-size: 14px;
+}
+.avatar{
+    height:45px;
+    width:45px;
+    background-size:45px 45px;
+    border-radius:50%;
+}
+.name{
+    margin-left: 15px;
+    width: 100%;
+}
+.person-item{
+    display: flex;
+    padding:0px 15px;
+    background: #fff;
+    margin-bottom:30rpx;
+}
+.item{
+    padding: 20rpx 15px;
+}
+.person-bg{
+    height: 100%;
+}
+.view-block{
+    display: block;
+}
+.view-block > view{
+    display: flex;
+    padding: 20rpx 0;
+}
+.flex-between{
+    display: flex;
+    justify-content:space-between;
+}
+.flex-between>view{
+    color: #999;
+}
+.border-bottom{
+    border-bottom:1px solid #e5e5e5;
+}
+.font-color{
+    color:#999;
+}
+.font-size{
+    font-size: 12px;
+}
+.image-arrow{
+    background-size:20px 20px;
+    width:20px;
+    height:20px;
+}

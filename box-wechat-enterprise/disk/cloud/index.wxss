@@ -1,0 +1,141 @@
+/* disk/cloud/index.wxss */
+.weui-grid {
+  width: 50%;
+  padding: 40px 10px;
+}
+.grid_gray {
+  background-color: "f8f8f8";
+}
+.grid_black {
+  background-color: "#000";
+}
+.weui-footer{
+  font-size: 10px;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  padding:15px
+}
+.file-group{
+    display: flex;
+}
+.view-image{
+    width:45px;
+    height:45px;
+    margin-right:5px;
+}
+.view-image image{
+    width: 45px;
+    height: 45px;
+}
+.file-info{
+    height: 45px;
+}
+.file-info label{
+    line-height: 45px;
+}
+
+
+.file_tool_item {
+  padding-left: 10px;
+}
+.crumbshide{
+  display: none;
+}
+.file_tool_order_item {
+  padding-left: 5px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.file_tool image {
+  width: 12px;
+  height: 12px;
+}
+.weui-flex{
+  overflow: scroll;
+}
+
+
+#breadcrumb {
+  display: inline-flex;
+  height: 40px;
+}
+#breadcrumb .icon {
+  font-size: 14px;
+}
+#breadcrumb .crumb-name{
+  display: inline-flex;
+}
+#breadcrumb .crumb-name image{
+  width: 15px;
+  height: 40px;
+  float: left;
+}
+#breadcrumb .crumb-name .weui-flex__item {
+  float: left;
+  background: #ffffff;
+  text-decoration: none;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #5B8CFF;
+}
+
+#breadcrumb .crumb-name .weui-flex__item text{
+  float: left;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#breadcrumb .crumb-name:last-child .weui-flex__item{
+  color: #000000;
+}
+
+.weui-media-box{
+  position: relative;
+}
+.weui-media-box__bd_in-appmsg .weui-media-box__title{
+    width:200px;
+    float:left;
+    display:inline-block;
+}
+.weui-media-box__bd_in-appmsg button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display:inline-block;
+    background: none;
+    padding: 0;
+    line-height: normal;
+    width:60px;
+    border:none;
+}
+.weui-media-box__bd_in-appmsg button::after{
+  border: none;
+}
+.weui-media-box__bd_in-appmsg button image{
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin: 25px 15px 0 0;
+}
+.weui-media-box .buttonhide{
+  display: none;
+}
+
+.weui-panel{
+  margin-top: 0;
+}
+
+@import "../template/createFolder.wxss";
+@import "../template/operation.wxss";
+@import "../template/createFolder.wxss";
+@import "../template/menu.wxss";
+@import "../template/music.wxss";

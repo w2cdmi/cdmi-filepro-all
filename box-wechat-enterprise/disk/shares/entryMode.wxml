@@ -1,0 +1,23 @@
+<!-- <view class='page'>
+    <view class='account-bind-description'>该邀请来自{{enterpriseName}}</view>
+    <view class='main'>
+
+    <button bindtap='touristLogn' class='form-btn-sbt'>匿名访问</button>
+    <view class='tourist-tips'><view style='color:#EA5036;display:inline-block;'>*</view>使用匿名身份登录将不能使用部分功能</view>
+
+    <view class='no-account-link' bindtap='gotoBindAccount'>已有该公司账号，绑定账号</view>
+
+    </view>
+</view> -->
+
+<view class='page'>
+    <view class='account-bind-description'>欢迎使用企业文件宝</view>
+    <view class='main'>
+
+    <button bindtap='touristLogn' class='form-btn-sbt'>个人身份访问</button>
+    <view class='tourist-tips'><view style='color:#EA5036;display:inline-block;'>*</view>使用个人身份登录将不能使用部分功能</view>
+
+    <view class='no-account-link' bindtap='gotoBindAccount'>已有公司账号，去绑定</view>
+
+    </view>
+</view>

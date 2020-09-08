@@ -1,0 +1,47 @@
+.save-personal,.select-file{
+    background-color: #3c95ff;
+    color: #ffffff;
+}
+input{
+    height: 32px;
+    line-height: 32px;
+    border-radius: 3px;
+    border: 1px solid #cfd6d6;
+}
+.personal-title{
+    color: #525353;
+    margin-right: 30px;
+    width: 70px;
+}
+.personal-label{
+    line-height: 34px;
+    margin-right: 10px;
+    background-color: #d5e7f6;
+    color: #747676;
+    font-size: 12px;
+    text-align: center;
+    width: 70px;
+    border-radius: 3px;
+}
+.personal-explain{
+    font-size: 12px;
+    color: #889097;
+}
+.personal-add{
+    background-color: #3c95ff;
+    height: 32px;
+    margin-left: 10px;
+    width: 32px;
+    float: left;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.personal-add>div{
+    height: 15px;
+    width: 15px;
+    margin: 8.5px;
+}
+.sys-logo,.sys-logo>div{
+    height: 60px;
+    width: 300px;
+}

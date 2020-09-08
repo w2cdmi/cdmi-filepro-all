@@ -1,0 +1,23 @@
+<import src="/disk/template/menu.wxml" />
+<import src="/disk/template/music.wxml" />
+<view class="page">
+    <view class="grids" wx:if="{{isShowGrids}}">
+        <block wx:for="{{grids}}" wx:key="*this">
+            <view id="{{item.id}}" bindtap="onclick" class="grid" hover-class="button-hover">
+                <image class="grid-icon" src="{{item.icon}}" />
+                <view class="grid-label">{{item.text}}</view>
+                <view class="grid-description">{{item.description}}</view>
+            </view>
+        </block> 
+    </view>
+
+    <!-- 显示上传按钮  -->
+    <view wx:if='{{!isShowGrids}}'>
+        <include src="/disk/widget/filelist.wxml" />
+    </view>
+</view>
+
+
+<template is="menu" data="{{isShowMenuPanel, animationMenuPanel, isShowMusicButton, isOpenRobot, userIcon, isOpenRobot, animationAddPanel, isShowUpButton}}"/>
+
+<template is="music" data="{{isShowMusicListPanel, musicCount, musics, isShowMusicPanel, playOrStopButton, musicInfoWidth, music, progressWidth, progress, currentTime, duration}}"/>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Department">
+    <typeAlias alias="DepartmentInfo" type="com.huawei.sharedrive.uam.organization.domain.Department" />
+    
+	<update id="updateDept" parameterClass="map">
+        update Department set `name`=#name#
+        <dynamic>
+            <isNotNull prepend="," property="parentId">
+                `parentId`=#parentId#
+            </isNotNull>
+            <isNotNull prepend="," property="state">
+                `state`=#state#
+            </isNotNull>
+        </dynamic>
+        where enterpriseId=#enterpriseId# and id=#id#
+    </update>
+    <delete id="deleteDept" parameterClass="Long">
+    	delete from Department where id=#departmentId#
+    </delete>
+     <insert id="addDept" parameterClass="DepartmentInfo">
+        <![CDATA[
+        insert into Department(id,enterpriseid,parentid,domain,name,state) 
+        values 
+        (#id#,#enterpriseid#,#parentid#,'local',#name#,0)
+        ]]>
+	</insert>
+    
+    <select id="queryByEnterpriseId" parameterClass="Long" resultClass="DepartmentInfo">
+        select * from department where enterpriseid=#enterpriseid# and state =0
+    </select>
+    
+     <select id="getEnpDeptByNameAndParent" parameterClass="map" resultClass="DepartmentInfo">
+        select * from department where enterpriseid=#enterpriseid# and name=#name# and parentid=#parentid#
+    </select>
+	
+    <select id="deptList" parameterClass="map" resultClass="DepartmentInfo">
+        select * from department where enterpriseid=#enterpriseid# 
+    </select>
+    
+    <select id="getDeptById" parameterClass="map" resultClass="DepartmentInfo">
+        select * from department where id=#id#
+    </select>
+    
+    <select id="getMaxId" resultClass="long">
+    	<![CDATA[
+    	select max(id) from department;
+        ]]>
+	</select>
+    <select id="listRootDept" parameterClass="Long" resultClass="DepartmentInfo">
+        select * from Department where enterpriseid=#enterpriseid# and parentid=-1
+    </select>
+    
+    <select id="listDepByParentDepId" parameterClass="map" resultClass="DepartmentInfo">
+        select * from Department where enterpriseid=#enterpriseid# and parentid=#parentid#
+    </select>
+
+    <select id="listDeptIdByParentDepId" parameterClass="map" resultClass="DepartmentInfo">
+        select id from Department where enterpriseid=#enterpriseid# and parentid=#parentid#
+    </select>
+
+</sqlMap>
+

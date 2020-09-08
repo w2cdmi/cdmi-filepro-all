@@ -1,0 +1,79 @@
+{
+    "pages": [
+        "disk/index",
+        "disk/enterprise/template/selectDepartment",
+        "disk/enterprise/template/selectEmploye",
+        "disk/save/saveToPersion",
+        "disk/shares/entryMode",
+        "disk/enterprise/enterpriselist",
+        "disk/enterprise/employees-departments/employees-departments",
+        "disk/enterprise/employees-departments/invite-page/invite",
+        "disk/enterprise/registered/registered",
+        "disk/enterprise/management",
+        "disk/cloud/index",
+        "disk/cloud/teamspacelist",
+        "disk/cloud/newteamspace",
+        "disk/cloud/addmember",
+        "disk/chat/index",
+        "disk/chat/chat",
+        "disk/shares/error",
+        "disk/shares/chat",
+        "disk/shares/sharefolder",
+        "disk/shares/sharefile",
+        "disk/widget/filelist",
+        "disk/chat/chatMemberInfo",
+        "disk/me/me",
+        "disk/chat/createChat",
+        "disk/widget/video",
+        "disk/chat/personal",
+        "disk/buy/buyPersonStorage",
+        "disk/backup/index",
+        "disk/widget/preview",
+        "disk/save/moveToOther",
+        "disk/widget/selectFolder",
+        "disk/template/shareMusic",
+        "disk/enterprise/login/login",
+        "disk/comments/comments",
+        "disk/recycle/recycle"
+    ],
+    "window": {
+        "navigationBarTextStyle": "#ffffff",
+        "navigationBarTitleText": "企业文件宝",
+        "navigationBarBackgroundColor": "#EA5036",
+        "backgroundColor": "#ffffff",
+        "onReachBottomDistance": 80,
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#a9b7b7",
+        "selectedColor": "#EA5036",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "/disk/images/icon/home-active.png",
+                "iconPath": "/disk/images/icon/home.png",
+                "pagePath": "disk/index",
+                "text": "首页"
+            },
+            {
+                "selectedIconPath": "disk/images/icon/cloud-active.png",
+                "iconPath": "/disk/images/icon/cloud.png",
+                "pagePath": "disk/cloud/index",
+                "text": "云文档"
+            },
+            {
+                "selectedIconPath": "disk/images/icon/me-active.png",
+                "iconPath": "/disk/images/icon/me.png",
+                "pagePath": "disk/me/me",
+                "text": "我的"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true
+}

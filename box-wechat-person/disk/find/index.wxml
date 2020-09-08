@@ -1,0 +1,8 @@
+<!--disk/find/index.wxml-->
+<view class='page' style='text-align:center;font-size:28rpx;margin-top:100px;color:#999;'>
+    <view><image src='/disk/images/blank/find-blank.png' style='width:200px;height:150px;'></image></view>
+    <text style='margin-top:10rpx;'>敬请期待,正在加紧创建中...</text>
+</view>
+
+<tabbar selectIndex="3" mCount="{{mCount}}" bind:onShowMenu="onShowMenu"></tabbar>
+<menu isShowMenu='{{isShowMenu}}' bind:onUploadImage="onUploadImage" bind:onUploadVideo="onUploadVideo" bind:showCreateFolder="showCreateFolder"></menu>

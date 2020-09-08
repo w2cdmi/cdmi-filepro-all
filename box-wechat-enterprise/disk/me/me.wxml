@@ -1,0 +1,76 @@
+<import src="/disk/template/menu.wxml" />
+<view class='person-bg'>
+<view class='item-flow person-item'>
+    <view><view class='avatar' style="background-image:url({{avatarUrl}})"></view></view>
+    <view class='name'>
+        <view class="name-title">
+            <label>{{nick}}</label>
+            <image src='../images/vip-icon.png' class='image-vip'></image>
+            <view class='vip-validity' hidden='{{spaceQuota=="100M"||spaceQuota=="200M"?true:false}}'>{{expireDate}}会员到期</view>
+        </view>
+        <view class="progress-view">
+            <view class='progress-space'>
+                <view class='progress-used' style='width:{{spaceUsed==0?0:spaceUsed}}%'></view>
+            </view>
+            <label class='progress-size'>容量 ({{spaceSize==0?"0/0":spaceSize}})</label>
+        </view>
+    </view>
+</view>
+
+<view class='item person-item flex-between' bindtap='switchEnterprise'>
+    <label>账号切换</label>
+    <view class='flex-align-center'><image src='../images/arrow.png' class='image-size'></image></view>
+</view>
+
+<view class='person-item view-block'>
+    <view class='flex-between border-bottom'>
+        <label>公司</label>
+        <view>{{enterpriseName==""?"无":enterpriseName}}</view>
+    </view>
+    <view class='flex-between'>
+        <label>账号类型</label>
+        <view>{{accountTypeName}}</view>
+    </view>
+</view>
+
+ <view class='item person-item flex-between' bindtap='bindtoEnterpriseManage' style="display:{{isAdmin?'flex':'none'}}">
+    <image class='img-enterprise-manange' src='/disk/images/me-management.png'></image>
+    <label style='margin-left:-241px;'>企业管理</label>
+    <view class='flex-align-center'><image src='../images/arrow.png' class='image-size'></image></view>
+</view> 
+
+
+<view class='item person-item flex-between' bindtap='gotoBuyPage' hidden='{{isAdmin?false:true}}'>
+    <label>扩容</label>
+    <view class='flex-align-center'><image src='../images/arrow.png' class='image-size'></image></view>
+</view>
+
+<view class='item person-item flex-between' bindtap='gotorecycle'>
+    <label>回收站</label>
+    <view class='flex-align-center'><image src='../images/arrow.png' class='image-size'></image></view>
+</view>
+
+<view class='contact-customer-service'>
+    <contact-button type='default-light' size="20" session-from="weapp"></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:20px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:40px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:60px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:80px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:100px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:120px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:140px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:160px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='left:180px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:20px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:40px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:60px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:80px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:100px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:120px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:140px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:160px'></contact-button>
+    <contact-button type='default-light' size="20" session-from="weapp" style='top:20px;left:180px'></contact-button>
+    <text style='position:relative;'>联系客服</text>
+</view>
+</view>

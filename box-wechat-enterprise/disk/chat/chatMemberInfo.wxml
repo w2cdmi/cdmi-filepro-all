@@ -1,0 +1,36 @@
+<view class='avatar-list-panel'>
+    <block wx:for = "{{accounts}}">
+        <view class='member'>
+            <image class='member-avatar' bindlongtap='deleteManager' data-id='{{item.id}}' src='{{item.avatar}}'></image>
+            <view class='memeber-name'>{{item.nick}}</view>
+        </view>
+    </block>
+    <view class='member' hidden='{{isHideTeamInfo?true:false}}'>
+        <button open-type='share' class='clear-button-style'><image class='member-avatar' src='../images/icon/chat-add.png'></image></button>
+        <view class='memeber-name'></view>
+    </view>
+</view>
+<view class='team-panel' hidden='{{isHideTeamInfo?true:false}}'>
+    <label class='team-title'>群聊名称</label>
+    <view class='team-name'>{{teamName}}</view>
+</view>
+<view class='team-option-panel'>
+    <view class='team-item border-bottom'>
+        <view class='top-title'>聊天置顶</view>
+        <switch bindchange="chatTopChange" checked="{{isTop}}"/>
+    </view>
+    <view class='team-item'>
+        <view class='message-prompt-title'>截屏通知</view>
+        <switch checked="{{isNotifyScreen}}" bindchange="notifyScreenChange" hidden='{{isOwner?false:true}}'/>
+        <view class='font-color' hidden='{{isOwner?true:false}}'>{{isNotifyScreen?'开启':'关闭'}}</view>
+    </view>
+</view>
+<view class='clear-panel' bindtap='clearHistoryMessage'>
+    清空聊天记录
+</view>
+<view class='view-button' bindtap='deleteTeam' hidden='{{isTeam&&isOwner?false:true}}'>
+    解散群聊
+</view>
+<view class='view-button' bindtap='leaveTeam' hidden='{{isTeam&&!isOwner?false:true}}'>
+    退出群聊
+</view>

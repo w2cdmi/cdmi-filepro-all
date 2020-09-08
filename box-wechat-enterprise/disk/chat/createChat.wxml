@@ -1,0 +1,12 @@
+<view class='main'>
+<form bindsubmit="formSubmit" hidden='{{isShowForm?false:true}}'>
+    <label>聊天群组名称</label>
+    <input  name='teamName' type='text' maxlength='255' placeholder='请输入聊天群组名称' placeholder-class='placeholder-cls'></input>
+    
+    <button formType="submit" class='form-btn-sbt'>新建</button>
+</form>
+<button open-type='share' class='form-btn-sbt' hidden='{{isShowShare?false:true}}'>邀请好友</button>
+</view>
+<!-- <button bindtap='sendText' class='form-btn-sbt'>发送</button> -->
+
+

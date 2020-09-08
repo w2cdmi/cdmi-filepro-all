@@ -1,0 +1,67 @@
+package com.huawei.sharedrive.uam.enterpriseuser.service;
+
+import java.util.List;
+
+import com.huawei.sharedrive.uam.enterpriseuser.domain.EnterpriseUser;
+import com.huawei.sharedrive.uam.enterpriseuser.dto.EnterpriseUserStatus;
+
+import pw.cdmi.box.domain.Limit;
+import pw.cdmi.box.domain.Order;
+
+public interface EnterpriseUserService
+{
+    
+    long create(EnterpriseUser enterpriseUser);
+    
+    List<EnterpriseUser> getFilterd(String filter, Long authServerId,Long departmentId, Long enterpriseId, Order order,
+        Limit limit);
+    
+    int getFilterdCount(String filter, Long authServerId, Long enterpriseId,Long departmentId);
+    
+    EnterpriseUser get(long userId, long enterpriseId);
+    
+    EnterpriseUser getUserInfo(long userId, long enterpriseId, String authType);
+    
+    EnterpriseUser getByObjectSid(String objectSid, long enterpriseId);
+    
+    void update(EnterpriseUser enterpriseUser);
+    
+    void updateEnterpriseUser(EnterpriseUser enterpriseUser);
+    
+    List<EnterpriseUser> getAccountUser(long accountId, long enterpriseId, long userSource, String filter,
+        String ids);
+    
+    void deleteByIds(long enterpriseId, String ids);
+    
+    void deleteById(long enterpriseId, Long id);
+    
+    List<EnterpriseUser> getAllADEnterpriseUser(Long enterpriseId, Long authServerId);
+    
+    void updateLdapStatus(List<EnterpriseUser> list, Byte ldapStatus, Long enterpriseId);
+    
+    int getByLdapStatusCount(Byte ldapStatus, Long enterpriseId);
+    
+    List<EnterpriseUser> getByLdapStatus(Byte ldapStatus, Long enterpriseId, Limit limit);
+    
+    void updateLdapStatusByNotIn(List<EnterpriseUser> list, Byte ldapStatus, Long enterpriseId);
+    
+    void updateStatus(List<Long> userIds, EnterpriseUserStatus status, Long enterpriseId);
+	
+	List<EnterpriseUser> getAllEnterpriseUser(long enterpriseId);
+
+    EnterpriseUser getDeptManager(long enterpriseId, long deptId);
+
+    void addDeptManager(long enterpriseId, long deptId, long enterpriseUserId);
+
+    void changeDepartment(long enterpriseUserId, long enterpriseId, long deptId);
+
+    EnterpriseUser getByEnterpriseIdAndName(long enterpriseId, String name);
+
+    //重置用户密码
+    EnterpriseUser resetPassword(long enterpriseId, long enterpriseUserId);
+
+	int getFilterdCount(String filter, Long authServerId, long enterpriseId, Long departmentId, long type);
+
+	List<EnterpriseUser> getFilterd(String filter, Long authServerId, Long departmentId, long enterpriseId, Order order,
+			Limit limit, long type);
+}

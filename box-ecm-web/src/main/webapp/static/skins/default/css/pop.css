@@ -1,0 +1,39 @@
+/**
+ * 定义弹出窗口使用的样式,与main.css隔离
+ */
+
+/*禁止最外层的滚动条*/
+html {
+    overflow: hidden;
+}
+
+.pop-content {
+    background-color: #eee;
+    overflow-x: hidden;
+}
+
+
+/* 弹出框 的内容容器 */
+.pop-content{ padding:20px 30px 0;}
+.pop-content-table{ padding:0 5px;}
+.pop-content .table-con{ margin-top:10px; }
+.pop-content .form-con{width: 550px; margin: 0 auto}
+.pop-content .form-con .pull-left{ margin-top: 10px;}
+.pop-content .form-con .icon-add{ width: 52px;font-size: 30px;text-align: center;line-height: 120px;margin:5px; color:#ccc;}
+.pop-content .form-con .control-group{ padding-bottom:20px;border-bottom: 1px solid #ccc}
+.pop-content .form-con .control-group input {width:200px}
+.pop-content .form-con .control-group textarea {width:400px}
+
+/*add strategy*/
+.pop-content .form-con-new{margin: 0 auto}
+.pop-content .form-con-new .pull-left{ margin-top: 10px;}
+.pop-content .controls-strategy{padding:0;float: left;}
+.pop-content .control-new-label{ width:240px;margin-top: 10px;float: right}
+/*space access*/
+.pop-content .form-con-new .icon-add-two{width: 30px;}
+.pop-content .control-new-label-two{ width:155px;}
+.pop-content .form-con-new .control-group-two{ padding-bottom:20px;border-bottom: 1px solid #ccc}
+
+/*config examples*/
+.pop-content .user-type{ display:block;margin-top: 15px}
+.pop-content .example-situation p{display:block; margin-bottom: 55px}

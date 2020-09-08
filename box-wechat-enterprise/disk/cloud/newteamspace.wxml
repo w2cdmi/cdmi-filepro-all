@@ -1,0 +1,52 @@
+<view>
+    <view class='massage' hidden='{{ifteam}}'>
+        <view class='form'>
+            <label>名称</label>
+            <label hidden='{{showname}}' bindtap='showinput'>{{name}}</label>
+            <input hidden='{{change}}' bindtap='changename' bindblur="bindblur" value="{{name}}" />
+        </view>
+        <view class='form'>
+            <label>上传文件时通知</label>
+            <switch bindchange="switchChange" />
+        </view>
+    </view>
+    <view class='muberlist'>
+        <view class='form'>
+            <label>成员列表</label>
+            <view style='float: right;' bindtap='addmember'>
+                <icon></icon>
+                <label>添加</label>
+            </view>
+        </view>
+        <view class='form empty' wx:if="{{teamspacelist.length == 0}}">
+            <label>协作空间暂无成员，请点击右上角添加成员</label>
+        </view>
+        <view>
+            <scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" style='height:{{scrollHeight}};'>
+                <view class="weui-panel weui-panel_access">
+                    <view class="weui-panel__bd">
+                        <view wx:for="{{teamspacelist}}" wx:key="*this">
+                            <view class='list'>
+                                <view class='people'>
+                                    <view class='img'>
+                                        <image src='../images/depfile.png'></image>
+                                    </view>
+                                    <label hidden='{{ifteam}}'>{{item.name}}</label>
+                                    <label hidden='{{!ifteam}}'>{{item.member.name}}</label>
+                                </view>
+                                <view class='permissions' hidden='{{!ifteam}}' wx:if="{{item.teamRole != 'admin'}}">
+                                    <view class='img' data-user-id='{{item.id}}' bindtap='deleteMember'>
+                                        <image src='/disk/images/icon/enterprise/cancel-select.png'></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view hidden='{{ifteam}}' class='btn' bindtap='newteamspace'>
+                <button>确定</button>
+            </view>
+        </view>
+    </view>
+</view>

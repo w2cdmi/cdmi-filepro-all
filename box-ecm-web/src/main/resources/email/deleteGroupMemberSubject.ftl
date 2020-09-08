@@ -1,0 +1,1 @@
+${operUserName} 已将您从群组 ${groupName}删除。

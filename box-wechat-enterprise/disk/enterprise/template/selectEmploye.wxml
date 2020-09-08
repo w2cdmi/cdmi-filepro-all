@@ -1,0 +1,49 @@
+<!--disk/enterprise/template/selectEmploye.wxml-->
+<view class='page'>
+    <view class='view-bg department-title'>请为【成都分公司】指定部门知识专员</view>
+    <view class='view-bg serach-bg'>
+        <view class='search-input-bg'>
+            <view class='view-serach-icon'>
+                <image class='serach-icon' src="/disk/images/icon/enterprise/serach-icon.png"></image>
+            </view>
+            <view><input class="serach-input" placeholder='请输入员工名称'></input></view>
+        </view>
+        <view class='serach-department-view'>
+            <view class='company-name'>成都分公司</view>
+            <view>
+                <image class='show-serach' src='/disk/images/icon/enterprise/show-serach.png'></image>
+            </view>
+        </view>
+    </view>
+
+    <view class='view-bg department-title department-list'>部门列表</view>
+
+    <!-- 员工列表 -->
+    <scroll-view scroll-y style='height:700rpx;'>
+        <!-- <block wx:for="{{employees}}" wx:key="*this">
+            <view class="file-group border-bottom view-up-down-space" hover-class='button-hover' data-folder-name='{{item.name}}' data-owner-id='{{item.ownedBy}}' data-node-id='{{item.id}}' bindtap='openFolder'>
+                <image class="img-icon margin-right" src='/disk/images/icon/folder-icon.png'></image>
+                <view class='file-info'>
+                    <label>{{item.name}}</label>
+                    <text>{{item.menderName}} | {{item.modifiedTime}}</text>
+                </view>
+            </view>
+        </block> -->
+        <view class="department-group border-bottom" bindtap='onSelectDepartment'>
+            <view class='view-select-icon'>
+                <image class="img-icon margin-right" src='/disk/images/icon/enterprise/no-select-icon.png'></image>
+            </view>
+            <view class='department-info'>
+                <view class='view-department-icon'>
+                    <image class="department-icon margin-right" mode='aspectFit' src='/disk/images/department-avatar.png'></image>
+                </view>
+                <view>
+                    <view>第一个部门</view>
+                    <text class='department-description' decode='{{true}}'>创建人&nbsp;&nbsp;|&nbsp;&nbsp;创建时间</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+
+    <view class='sure-button'>确认</view>
+</view>

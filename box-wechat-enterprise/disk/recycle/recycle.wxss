@@ -1,0 +1,55 @@
+/* disk/recycle/recycle.wxss */
+ @import "../template/fileList.wxss"; 
+@import "./drawer.wxss";
+.recyle{
+    height: 100%;
+}
+.toolbar {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+}
+
+.confim {
+    position: absolute;
+    bottom: 0;
+    background: #ea5036;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.depart {
+    width: 8rpx;
+    height: 44rpx;
+    margin-top: 24rpx;
+    margin-left: 20rpx;
+
+}
+checkbox .wx-checkbox-input{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+   margin-top: 24rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: #1D97FF;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.file-info {
+  height: 90rpx;
+   width: 70%; 
+}

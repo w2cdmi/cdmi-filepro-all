@@ -1,0 +1,63 @@
+<import src="/disk/template/menu.wxml" />
+<import src="/disk/template/music.wxml" />
+
+<view class="page" bindtap='hideMenu'>
+  <!-- <view class='chat-options'>
+    <button open-type='share' class='clear-button-style'>邀请好友私聊</button>
+    <button class='clear-button-style rightLine' bindtap='jumpCreateChatPage'>新建聊天群组</button>
+  </view> -->
+  <view class='main'>
+    <!--内容开始 -->
+    <!-- <view class="weui-panel weui-panel_access" style='height:100%;background:#F5F5F5;'> -->
+        <view class='blankBackground' hidden='{{sessions.length==0&&!isClearOldDate?false:true}}'>
+          <image src='../images/blank/blank-bg.png'></image>
+          <view>矮油，还没有聊天记录</view>
+        </view>
+        <view class="weui-panel__bd" wx:for="{{sessions}}" wx:key="*this">
+            <view bindtap='viewMessage' bindlongpress='handleMessage' data-session-id='{{item.id}}' data-chat-object-id='{{item.to}}' data-object-nick="{{objectNicks[item.to]==''?item.to:objectNicks[item.to]}}" class="weui-media-box weui-media-box_appmsg session-bg" style="background:{{item.isTop?'#F9F8F8':''}};" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style='width:50px;height:50px;'>
+                    <!-- <view class="weui-grid__icon grid_icon" style="background-image:url({{avatarUrls[item.to]}});background-size:45px 45px;border-radius:50%;" ></view> -->
+                    <image class="weui-grid__icon grid_icon" style='border-radius:{{item.scene=="p2p"?50:0}}%;' src='{{avatarUrls[item.to]}}'></image>
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg left" style='height:50px;'>
+                    <view class="weui-media-box__title">
+                        <view style="float:left;line-height:27px;">{{objectNicks[item.to]==''?item.to:objectNicks[item.to]}}</view>
+                        <view class='session-time'>{{item.lastMsg.time}}</view>
+                    </view>
+                    <view id="{{item.id}}" class="weui-media-box__desc sessions-list">
+                        <view class='message-recent'>
+                            <block wx:if="{{item.scene=='team'}}">
+                                <block wx:if="{{item.lastMsg.type=='notification'}}">
+                                    {{item.notifyMessage}}
+                                </block>
+                                <block wx:if="{{item.lastMsg.type=='tip'}}">
+                                    {{item.lastMsg.tip}}
+                                </block>
+                                <block wx:if="{{item.lastMsg.type!='notification' && item.lastMsg.type!='tip'}}">
+                                    {{item.lastMsg.fromNick}} : {{item.lastMsg.text}}
+                                </block>
+                            </block>
+                            <block wx:if="{{item.scene=='p2p'}}">
+                                {{item.lastMsg.text}}
+                            </block>
+                        </view>
+                        <block wx:if="{{item.unread > 0}}">
+                            <view class='message-tips-number'>{{item.unread>99?'99+':item.unread}}</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    <!-- </view> -->
+    <!--内容结束 -->
+</view>
+</view>
+
+<view class='operation-menu' hidden='{{isShowMenu?false:true}}' style='top:{{menu_top}};left:{{menu_left}}'>
+    <view data-session-id='{{sessionId}}' data-is-top='{{isTop}}' bindtap='setchatTop'>{{isTop?'取消置顶':'聊天置顶'}}</view>
+    <view data-session-id='{{sessionId}}' bindtap='viewTeamInfo'>查看群组信息</view>
+    <view data-session-id='{{sessionId}}' bindtap='deleteMessage'>删除该聊天</view>
+</view>
+
+<template is="menu" data="{{isShowMenuPanel, animationMenuPanel, isShowMusicButton, isOpenRobot, userIcon, isOpenRobot, animationAddPanel, isShowUpButton, isShowChatButton}}"/>
+<template is="music" data="{{isShowMusicListPanel, musicCount, musics, isShowMusicPanel, playOrStopButton, musicInfoWidth, music, progressWidth, progress, currentTime, duration}}"/>

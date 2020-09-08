@@ -1,0 +1,33 @@
+<import src="/disk/template/operation.wxml" />
+<import src="/disk/template/menu.wxml" />
+<import src="/disk/template/music.wxml" />
+<view>
+
+    <view class='crumbs' style='border-bottom:1px solid #F5F5F5;'>
+        <view class="breadcrumbs">
+            <!--水平滚动-->
+            <view class="weui-flex" scroll-x style="width: 100%;background:#fff;">
+                <view id="breadcrumb">
+                    <view class='crumb-name' wx:for="{{crumbs}}" wx:key="*this" data-crumb="{{item}}" bindtap="onCrumbClick">
+                        <view class="weui-flex__item">
+                            <text>{{item.name}}</text>
+                        </view>
+                        <image src='../images/triangle.png'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>
+        <template is="up-progress" data="{{isShowUplodProgress, percent}}" />
+        <include src="../widget/_file_list.wxml" />
+    </view>
+
+    <template is="menu" data="{{isShowMenuPanel, animationMenuPanel, isShowMusicButton, isOpenRobot, userIcon, isOpenRobot, animationAddPanel, isShowUpButton}}" />
+
+    <template is="music" data="{{isShowMusicListPanel, musicCount, musics, isShowMusicPanel, playOrStopButton, musicInfoWidth, music, progressWidth, progress, currentTime, duration}}" />
+</view>
+
+<include src="/disk/template/createFolder.wxml" />
+
+<template is="operation-menu" data="{{menu_top,menu_left,isShowMenu,node}}" />

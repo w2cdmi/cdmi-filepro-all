@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="WxEnterpriseUser">
+
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<typeAlias alias="WxEnterpriseUser" type="com.huawei.sharedrive.uam.weixin.domain.WxEnterpriseUser" />
+
+    <insert id="insert" parameterClass="WxEnterpriseUser">
+        <![CDATA[
+        insert into wx_enterprise_user(corpId,departmentId,userId,`name`,`order`,position,mobile,gender,email,isLeader,avatar,telephone,englishName,`status`,boxEnterpriseId,boxEnterpriseUserId)
+        values
+        (#corpId#,#departmentId#,#userId#,#name#,#order#,#position#,#mobile#,#gender#,#email#,#isLeader#,#avatar#,#telephone#,#englishName#,#status#,#boxEnterpriseId#,#boxEnterpriseUserId#)
+        ]]>
+	</insert>
+
+    <update id="update" parameterClass="WxEnterpriseUser">
+        UPDATE wx_enterprise_user SET
+        `name`=#name#,
+        departmentId=#departmentId#,
+        mobile=#mobile#,
+        position=#position#,
+        gender=#gender#,
+        email=#email#,
+        `status`=#status#,
+        englishName=#englishName#,
+        isLeader=#isLeader#,
+        telephone=#telephone#,
+        avatar=#avatar#
+        WHERE corpId=#corpId# AND userId=#userId#
+    </update>
+
+    <delete id="delete" parameterClass="WxEnterpriseUser">
+        <![CDATA[
+        DELETE FROM wx_enterprise_user WHERE corpId=#corpId# AND userId=#userId#
+        ]]>
+    </delete>
+
+    <select id="get" parameterClass="map" resultClass="WxEnterpriseUser">
+        <![CDATA[
+    	select * from wx_enterprise_user where corpId=#corpId# AND userId=#userId#
+        ]]>
+    </select>
+
+    <select id="getByCorpId" parameterClass="String" resultClass="WxEnterpriseUser">
+        <![CDATA[
+    	select * from wx_enterprise_user where corpId=#corpId#
+        ]]>
+    </select>
+
+    <select id="getByEnterpriseIdAndUserId" parameterClass="map" resultClass="WxEnterpriseUser">
+        <![CDATA[
+    	select * from wx_enterprise_user where boxEnterpriseId=#boxEnterpriseId# and boxEnterpriseUserId=#boxEnterpriseUserId#
+        ]]>
+    </select>
+</sqlMap>
+

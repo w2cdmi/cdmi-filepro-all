@@ -1,0 +1,23 @@
+<view class="file_tool" style="height:100%;font-size:13px;">
+  <view class="file_tool_item" style="float:right">
+      <image src='../images/new-folder.png'></image>
+  </view>
+  <view class="file_tool_item" style="float:right">
+      <image src='../images/action-search.png'></image>
+  </view>
+  <view class="file_tool_item" style="float:right;">
+    <text style="float:left">排序: </text>
+    <view class="file_tool_order_item" style="float:left">
+      <view style="float:left">日期</view>
+      <view style="float:left">
+        <image src='../images/icon/sort-desc.png'></image>
+      </view>
+    </view>
+    <view class="file_tool_order_item" style="float:left">
+      <view style="float:left">名称</view>
+      <view style="float:left">
+        <image src='../images/icon/sort-asc.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,125 @@
+<view style='background-color:#FFF'>
+  <view class='showfile'>
+    <view hover-class='weui-cell_active' class="file-group border-bottom view-bg" data-fileInfo="{{item}}" catchtap="fileItemClick">
+      <view>
+        <image class="img-icon margin-right" mode='center' src='../images/icon/file-doc.png'></image>
+      </view>
+      <view class='file-info cell_2_body_content'>
+        <label>123123</label>
+        <text><block>123123</block></text>
+      </view>
+      <view>
+        <button type="warn" bindtap="warn">保存</button>
+      </view>
+    </view>
+    <view class='tool'>
+      <view class='i-tool view'>
+        <label>
+          <icon type="success" size="20"></icon>1267人浏览</label>
+      </view>
+      <view class='right'>
+        <view class='i-tool'>
+          <label>
+            <icon type="success" size="20"></icon>分享</label>
+        </view>
+        <view class='i-tool'>
+          <label>
+            <icon type="success" size="20"></icon>点赞</label>
+        </view>
+        <view class='i-tool'>
+          <label>
+            <icon type="success" size="20"></icon>评论</label>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='thumb'>
+    <view class='btn'>
+      <button type="warn" bindtap="warn">
+        <icon type="success" size="20"></icon>保存</button>
+    </view>
+    <view class='num'>已有4239觉得赞</view>
+    <view class='portrait'>
+      <view class='head-portrait'>
+        <image src='../images/icon/add-icon.png'></image>
+      </view>
+      <view class='head-portrait'>
+        <image src='../images/icon/add-icon.png'></image>
+      </view>
+      <view class='head-portrait'>
+        <image src='../images/icon/add-icon.png'></image>
+      </view>
+      <view class='head-portrait'>
+        <image src='../images/icon/add-icon.png'></image>
+      </view>
+      <view class='head-portrait'>
+        <image src='../images/icon/add-icon.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='comment'>
+    <view class='comment-count'>评论(113)</view>
+    <view>
+      <view class='comment-lists'>
+        <image class='portrait' src='../images/icon/add-icon.png'></image>
+        <view class='info'>
+          <view class='info-user'>
+            <text class='username'>username</text>
+            <icon></icon>
+          </view>
+          <view class='comment-message'>老师资料非常的棒，希望以后有更多的资料和文件分享给大家，感谢老师,打call，打 call。</view>
+          <view class='comment-info-times-count'>
+            <text class='times'>2018-02-12 18:20</text>
+            <view class='count-msg'>
+              <view class='count'>
+                <image src='../images/comments/comments-white.png'></image>
+                <text>100</text>
+              </view>
+              <view class='msg'>
+                <image src='../images/comments/comments-white.png'></image>
+                <text>100</text>
+              </view>
+            </view>
+          </view>
+          <view class='comment-reply'>
+            <view class='reply'>
+              <text class='username' style='color: #5176AB;'>username1:</text>
+              <text style='margin-right:60rpx;'>资料各方面很好值得推荐资料各方面很好值得推荐。资料各方面很好，值得推荐。资料各方面很好，值得推荐。</text>
+            </view>
+          </view>
+          <view class='reply-all' style='color: #5176AB;'>
+            查看全部回复
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='float:left;display:{{!inputbox?"flex":"none"}}' class='input'>
+    <text style="color:#999999;" bindtap='showinput'>我来说一说...</text>
+    <view style='margin-right:60rpx;'>@</view>
+    <!--emoji表情盒子-->
+    <view class="emoji-box {{inputbox ? 'emoji-move-in' : 'emoji-move-out'}} {{isLoad ? 'no-emoji-move' : ''}}">
+      <scroll-view scroll-y="true" bindscroll="emojiScroll" style="height:200px">
+        <block wx:for="{{emojis}}" wx:for-item="e" wx:key="">
+          <view class="emoji-cell">
+            <image class="touch-active" catchtap="emojiChoose" src="http://soupu.oss-cn-shanghai.aliyuncs.com/emoji/{{e.emoji}}.png" data-emoji="{{e.char}}" data-oxf="{{e.emoji}}"></image>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <form class='textarea' style='display:{{inputbox?"flex":"none"}};' bindtap='close'>
+    <view class='box'>
+      <textarea cursor-spacing='700px;' focus='{{inputbox}}' show-confirm-bar="false" adjust-position="true" fixed="true"  placeholder="我来说一说..." maxlength="500">
+      </textarea>
+      <view class='textarea-bot'>
+        <view class='icom'>@</view>
+        <view class='tip-botton'>
+          <text>最多输入500字</text>
+          <button type='warn' disabled='true'>发送</button>
+        </view>
+      </view>
+
+    </view>
+  </form>
+</view>

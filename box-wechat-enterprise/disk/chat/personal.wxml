@@ -1,0 +1,40 @@
+<view class='person-bg'>
+<view class='item person-item'>
+    <view class='avatar' style="background-image:url({{avatarUrl}})"></view>
+    <view class='name'>
+        <label>{{nick}}</label>
+        <view class='font-color font-size'>聊天账号：{{account}}</view>
+    </view>
+</view>
+<view class='item person-item flex-between'>
+    <label>账号类型</label>
+    <view>{{accountTypeName}}</view>
+</view>
+<view class='person-item view-block' style="display:{{isEnterpriseAccount?'flex':'none'}}">
+    <view class='flex-between border-bottom'>
+        <label>公司</label>
+        <view>{{enterpriseName==""?"无":enterpriseName}}</view>
+    </view>
+    <view class='flex-between'>
+        <label>部门</label>
+        <view>{{departmentName==""?"无":departmentName}}</view>
+    </view>
+</view>
+<view class='person-item view-block' style="display:{{isEnterpriseAccount?'flex':'none'}}">
+    <view class='flex-between border-bottom'>
+        <label>手机</label>
+        <view>{{telphone==""?"无":telphone}}</view>
+    </view>
+    <view class='flex-between border-bottom'>
+        <label>座机</label>
+        <view>{{phone==""?"无":phone}}</view>
+    </view>
+    <view class='flex-between'>
+        <label>邮箱</label>
+        <view>{{email==""?"无":email}}</view>
+    </view>
+</view>
+<view class='view-button' bindtap='sendMessage'>
+    发消息
+</view>
+</view>

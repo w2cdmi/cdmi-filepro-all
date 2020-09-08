@@ -1,0 +1,18 @@
+<view class="error">
+  <view class='share-header'>
+    <image src='../images/lighting-icon.png'></image>
+    <view class='share-header-left'>企业文件宝</view>
+    <view class="share-header-right">分享者：123</view>
+  </view>
+  <view class='share-blank'></view>
+  <view class='error-middle'>
+    <image src='../images/error-link.png'></image>
+    <view class='error-middle-h1'>链接失效</view>
+    <view class='error-middle-p'>链接失效,请获取最新链接</view>
+  </view>
+
+  <view class='share-tail'>
+    <view>企业文件宝</view>
+    <view>版权所有 © 华一云网科技成都有限公司 2017-2018.</view>
+  </view>
+</view>

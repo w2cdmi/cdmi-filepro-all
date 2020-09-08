@@ -1,0 +1,116 @@
+<template name="file-list">
+  <view class='content cell_2' enable-back-to-top scroll-left="{{item.scrollLeft}}" scroll-y>
+    <!-- scroll-view -->
+    <scroll-view wx:for="{{data.files}}" wx:key="*this" data-fileInfo='{{item}}' bindscrolltolower="scrollToLeft" scroll-left='{{scrollLeft}}' scroll-x='{{isScrollX}}' class='item-info'>
+      <view>
+        <view hover-class='weui-cell_active' style="width:100%;box-sizing:content-box;padding:20rpx 50rpx;" class="file-group border-bottom view-bg" data-fileInfo="{{item}}" catchtap="{{show_check_sharemenu?'checked_item':'fileItemClick'}}" capture-catch:longpress="FileList_show" data-index="{{index}}">
+          <view class='checkbox' wx:if="{{show_check_sharemenu}}" catchtap='checked_item' data-index="{{index}}">
+            <icon wx:if="{{item.checked}}" size="25" type='success' color='rgba(29,151,255,1)'></icon>
+            <label wx:if="{{!item.checked}}"></label>
+          </view>
+          <view>
+            <image class="img-icon margin-right" mode='center' src='{{item.icon}}'></image>
+          </view>
+          <view class='file-info cell_2_body_content'>
+            <label>{{item.name}}</label>
+            <text><block wx:if="{{item.fileSize}}">{{item.fileSize}}</block><block wx:if="{{item.ownerName}}">{{item.ownerName}}</block> | {{item.modifiedTime}}</text>
+          </view>
+          <button class='clear-button-style button-size' data-file-info='{{item}}' catchtap='saveToPersion' hidden='{{data.isShowSaveMenu?false:true}}'>
+            <image src="./images/save-to.png" />
+          </button>
+          <button  class='clear-button-style button-size' data-fileInfo='{{item}}' catchtap="onShareButtonClick" open-type="share">
+            <image wx:if="{{!show_check_sharemenu}}" src="./images/share-disable.png" />
+          </button>
+        </view>
+        <view class="cell_2_delete2" data-index="{{index}}" data-fileInfo='{{item}}' catchtap='scrollToLeft'>删除</view>
+      </view> 
+    </scroll-view>
+  </view>
+</template>
+
+<template name="long_press_menu">
+  <view class='sharemenu' style='{{show_check_sharemenu?"flex":none}}'>
+    <view class='item' bindtap='sharelists'>
+      <image class='icon' src='/disk/images/icon/share.png'></image>
+      <text>分享</text>
+    </view>
+    <view class='item'>
+      <image class='icon'  src='/disk/images/icon/del.png'></image>
+      <text>删除</text>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/disk/images/icon/privilege.png'></image>
+      <text>权限分享</text>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/disk/images/icon/privilege.png'></image>
+      <text>移动与复制</text>
+    </view>
+  </view>
+</template>
+<template name="share_menu">
+  <view class='share_menu' catchtap="shareviewclose">
+    <view class='share_box'>
+      <view class="share"> 
+        <input class='share_name' value="{{data.sharecontent}}" focus="{{sharemenu}}" placeholder='请输入分享名称' placeholder-class="input_placeholder"  bindinput="bindTextAreaInput"></input>
+        <view class="share_info">
+          <view class="item">
+            <view class="title">
+              分享形式
+            </view>
+            <view class="lists">
+              <view>
+                公开
+              </view>
+              <view>
+                动态码
+              </view>
+              <view>
+                提示码
+              </view>
+            </view>
+          </view>
+          <view class="item">
+            <view class="title">
+              下载
+            </view>
+            <view class="lists">
+              <view class="checked">
+                一天
+              </view>
+              <view>
+                不允许
+              </view>
+            </view>
+          </view>
+          <view class="item">
+            <view class="title">
+              有效期
+            </view>
+            <view class="lists">
+              <view>
+                一天
+              </view>
+              <view>
+                七天
+              </view>
+              <view>
+                永久
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="share_button" bindtap="share_go">
+        分享
+      </view>
+    </view>
+  </view>
+</template>
+<!-- <wxs module="foo">
+  var some_msg = "hello world";
+  module.exports = {
+    msg: some_msg,
+  }
+</wxs>
+<view> {{foo.msg}} </view> -->

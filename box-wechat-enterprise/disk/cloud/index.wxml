@@ -1,0 +1,29 @@
+<import src="/disk/template/menu.wxml" />
+<import src="/disk/template/music.wxml" />
+
+<view class="page" style='height:100%'>
+    <view class="weui-grids" wx:if="{{isShowGrids}}">
+        <block wx:for="{{grids}}" wx:key="*this">
+            <view id="{{item.id}}" bindtap="onclick" class="weui-grid" hover-class="weui-grid_active">
+                <image class="weui-grid__icon" src="{{item.icon}}" />
+                <view class="weui-grid__label">{{item.text}}</view>
+                <view class="weui-grid__description">{{item.description}}</view>
+            </view>
+        </block>
+    </view>
+
+    <!--显示上传按钮  -->
+    <view wx:if='{{!isShowGrids}}'>
+        <include src="/disk/widget/filelist.wxml" />
+    </view>
+
+    <view class="weui-footer" wx:if='{{isShowGrids}}'>
+        <view>企业文件宝 www.filepro.cn</view>
+        <view>版本(v1.0.031)</view>
+    </view>
+</view>
+
+
+<template is="menu" data="{{isShowMenuPanel, animationMenuPanel, isShowMusicButton, isOpenRobot, userIcon, isOpenRobot, animationAddPanel, isShowUpButton}}"/>
+
+<template is="music" data="{{isShowMusicListPanel, musicCount, musics, isShowMusicPanel, playOrStopButton, musicInfoWidth, music, progressWidth, progress, currentTime, duration}}"/>

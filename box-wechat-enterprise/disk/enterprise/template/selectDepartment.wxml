@@ -1,0 +1,55 @@
+<view class='page'>
+    <!-- 文件信息 -->
+    <view class='view-bg file-group'>
+        <image class='img-icon margin-right' mode='center' src='/disk/images/department-avatar.png'></image>
+        <view class='file-info'>
+            <label>郑勇</label>
+            <text>创建时间 | </text>
+        </view>
+    </view>
+
+    <!-- body -->
+    <view class='view-bg margin-top'>
+        <view>
+            <!-- crumbs -->
+            <scroll-view scroll-x class='border-bottom' style='height:{{crumbsHeight}}px'>
+                <view class='crumbs font-middle'>
+                    <!-- <block wx:for="{{crumbs}}" wx:key="*this">
+                        <view data-crumb='{{item}}' bindtap='clickCrumb' class="{{currentNodeId==item.nodeId?'current-dir':''}}">第一个部门</view>
+                        <image hidden="{{currentNodeId==item.nodeId?true:false}}" src='../images/icon-arrow.png'></image>
+                    </block> -->
+                    <view data-crumb='{{item}}' bindtap='clickCrumb' class="{{currentNodeId==item.nodeId?'current-dir':''}}">第一个部门</view>
+                    <image hidden="{{currentNodeId==item.nodeId?true:false}}" src='/disk/images/icon-arrow.png'></image>
+
+                </view>
+            </scroll-view>
+
+            <scroll-view class='content' scroll-y style='height:{{listHeight}}px' hidden='{{isTeamSpace}}'>
+                <!-- <block wx:for="{{folders}}" wx:key="*this">
+                    <block wx:if="{{item.isListAcl}}">
+                        <view class="file-group border-bottom view-up-down-space" hover-class='button-hover' data-folder-name='{{item.name}}' data-owner-id='{{item.ownedBy}}' data-node-id='{{item.id}}' bindtap='openFolder'>
+                            <image class="img-icon margin-right" src='/disk/images/icon/folder-icon.png'></image>
+                            <view class='file-info'>
+                                <label>{{item.name}}</label>
+                                <text>{{item.menderName}} | {{item.modifiedTime}}</text>
+                            </view>
+                        </view>
+                    </block>
+                </block> -->
+                <view class="file-group border-bottom view-up-down-space" hover-class='button-hover' data-folder-name='{{item.name}}' data-owner-id='{{item.ownedBy}}' data-node-id='{{item.id}}' bindtap='openFolder'>
+                    <image class="img-icon margin-right" src='/disk/images/icon/folder-icon.png'></image>
+                    <view class='file-info'>
+                        <label>第二个部门</label>
+                        <text>征用 | 2</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+
+    <!-- operation -->
+    <view class='view-bg save-to-operation'>
+        <button class="gray-button clear-button-style" bindtap='onCancelMoveEmploye'>取消</button>
+        <button class='clear-button-style' bindtap='onConfirmMove'>确认</button>
+    </view>
+</view>

@@ -1,0 +1,85 @@
+@import "../chat/personal.wxss";
+.item-flow{
+    padding: 20rpx 15px;
+}
+.item{
+    display: flex;
+    justify-content:space-between;
+    line-height:80rpx;
+    background:#fff;
+    padding:10rpx 30rpx;
+    font-size:14px;
+    border-top: 1px solid #F8F8F8;
+}
+.contact-customer-service{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    margin: 0 auto;
+    background:#EA5036;
+    border-radius:5px;
+    text-align:center;
+    font-size:14px;
+    line-height:40px;
+    margin-top:40px;
+    color: #fff;
+}
+.contact-customer-service contact-button{
+    position: absolute;
+    opacity:0;
+}
+.image-size{
+    width:10px;
+    height:18px;
+    margin-left:5px;
+    margin-top:2px;
+}
+.image-vip{
+    width:36rpx;
+    height:25rpx;
+    margin-top:6rpx;
+    margin-left:20rpx;
+}
+.img-enterprise-manange{
+  width:24rpx;
+  height:24rpx;
+  margin-top:28rpx;
+}
+.flex-align-center{
+    display:flex;
+    align-items:center;
+}
+.name-title{
+    height:40rpx;
+    line-height:40rpx;
+    display:flex;
+}
+.name-title label{
+    max-width:180rpx;
+    white-space:nowrap;
+    text-align:left;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.vip-validity{
+    color:#999;
+    font-size:11px;
+    margin-left:5px;
+}
+.progress-view{
+}
+.progress-used{
+    height:6px;
+    background:#75D7A3;
+    border-radius:3px;
+    width:0%;
+}
+.progress-space{
+    height:6px;
+    background:#E7E7E7;
+    border-radius:1.5em;
+}
+.progress-size{
+    font-size:12px;
+    color:#999;
+}

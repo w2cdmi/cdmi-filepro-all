@@ -1,0 +1,98 @@
+<scroll-view class='content' enable-back-to-top scroll-left="{{item.scrollLeft}}" style='height:100%' scroll-y>
+    <scroll-view wx:for="{{depts}}" wx:key="*this" scroll-left='{{scrollLeft}}' data-item='{{item}}' scroll-x="{{true}}">
+        <view hover-class='weui-cell_active' class="file-group border-bottom view-bg" data-dept-info="{{item}}" catchtap="onClickDept">
+            <view>
+                <!--  部门头像  -->
+                <image class="img-icon margin-right" mode='aspectFit' src='{{item.icon}}'></image>
+            </view>
+            <view class='file-info cell_2_body_content'>
+                <label>{{item.name}}</label>
+                <image class='small-mark' src='/disk/images/department-complate.png'></image>
+                <text decode='{{true}}'>部门&nbsp;{{item.subDepts}}&nbsp;个&nbsp;&nbsp;|&nbsp;&nbsp;员工&nbsp;{{item.subEmployees}}&nbsp;个</text>
+            </view>
+            <!-- 三个圆点  -->
+            <view class='dept-more' data-department='{{item}}' catchtap='setModalStatus' data-status="1">
+                <image class='plug_icon' src='/disk/images/depart-plug.png'></image>
+            </view>
+        </view>
+        <view class="cell_2_delete2" data-index="{{index}}" data-item='{{item}}' catchtap='onDeleteDeptOrEmploye'>删除</view>
+    </scroll-view>
+
+    <!-- <scroll-view catchlongpress="setModalStatus" data-status="1" scroll-left='{{scrollLeft}}' data-fileInfo='{{item}}' bindscrolltolower="scrollToLeft" scroll-x="{{true}}">
+        <view hover-class='weui-cell_active' class="file-group border-bottom view-bg" data-dept-info="{{item}}" catchtap="onClickDept">
+            <view>
+                <image class="img-icon margin-right" mode='aspectFit' src='111'></image>
+            </view>
+            <view class='file-info cell_2_body_content'>
+                <label>112</label>
+                <image class='small-mark' src='/disk/images/department-complate.png'></image>
+                <text decode='{{true}}'>部门&nbsp;111&nbsp;个&nbsp;&nbsp;|&nbsp;&nbsp;员工&nbsp;222&nbsp;个</text>
+            </view>
+            <view class='dept-more'>
+                <image class='plug_icon' src='/disk/images/depart-plug.png'></image>
+            </view>
+        </view>
+        <view class="cell_2_delete2" data-index="11" data-fileInfo='112' catchtap='scrollToLeft'>删除</view>
+    </scroll-view> -->
+
+    <scroll-view catchlongpress="setModalStatus" data-status="1" wx:for="{{employees}}" wx:key="*this" scroll-left='{{scrollLeft}}' data-fileInfo='{{item}}' bindscrolltolower="scrollToLeft" scroll-x="{{true}}">
+        <view hover-class='weui-cell_active' class="file-group border-bottom view-bg" data-fileInfo="{{item}}" catchtap="fileItemClick">
+            <view>
+                <image class="img-icon margin-right" mode='aspectFit' src='{{item.icon}}'></image>
+            </view>
+            <view class='file-info cell_2_body_content'>
+                <label>{{item.name}}</label>
+                <image class='small-mark' src='/disk/images/department-complate.png'></image>
+                <text decode='{{true}}'>员工</text>
+            </view>
+            <!-- 三个圆点  -->
+            <view class='dept-more' data-department='{{item}}' catchtap='setModalStatus' data-status="1">
+                <image class='plug_icon' src='/disk/images/depart-plug.png'></image>
+            </view>
+        </view>
+        <view class="cell_2_delete2" data-index="{{index}}" data-item='{{item}}' catchtap='onDeleteDeptOrEmploye'>删除</view>
+    </scroll-view>
+</scroll-view>
+
+<!-- 底部菜单  -->
+<view class='view_bottom'>
+    <navigator class='invite_navigator bottom_button_size' url="/disk/enterprise/employees-departments/invite-page/invite?deptId={{currentDeptId}}" hover-class="navigator-hover">
+        <button class='bottom_button bottom_button_size invite_link'>链接邀请成员</button>
+    </navigator>
+     <button catchtap='togglePopup' class='bottom_button bottom_button_size add_department'>添加部门</button> 
+</view>
+
+<!-- drawer-view  -->
+<view class="drawer_screen" bindtap="setModalStatus" data-status="0" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_attr_content" wx:if="{{department.type=='department'}}">
+        <view style='text-align:left;' class='draw_view_content_comm'>
+            <image src='/disk/images/depart-draw-avatar.png' class='draw_department_icon'></image>
+            <text class='drawer_depart_text' style='color:#333333;font-size:26rpx;'>{{department.name}}</text>
+            <text class='drawer_depart_text' style="color:#999999;margin-left:10rpx;" decode='{{true}}'>(部门&nbsp;{{department.subDepts}}&nbsp;个&nbsp;&nbsp;|&nbsp;&nbsp;员工&nbsp;{{department.subEmployees}}&nbsp;个)</text>
+        </view>
+        <view class='draw_view_content_comm' data-dept-id='{{department.userId}}' bindtap='onClickSetDeptManager'>指定部门主管</view>
+        <view class='draw_view_content_comm' data-dept-id='{{department.userId}}' bindtap='onClickSetDeptKnowledgerManager'>管理部门知识专员</view>
+        <view class='draw_view_content_comm' data-dept-id='{{department.userId}}' data-approve='{{department.approve}}' bindtap='onSetDocumentAudit'>{{department.approve?'关闭':'打开'}}文件外发审核</view>
+    </view>
+
+    <view class="drawer_attr_content_user" wx:if="{{department.type == 'user'}}">
+        <view class='draw_view_content_comm' data-employe-id='{{department.userId}}' bindtap='onClickMoveEmploye'>移动</view>
+    </view>
+
+    <view bindtap="setModalStatus" data-status="0" class='cancel_view draw_view_content_comm'> 取消</view>
+</view>
+
+<view class="modal-mask" wx:if="{{showPopup}}"></view>
+<view class="modal-dialog" wx:if="{{showPopup}}">
+  <view class="modal-title">请输入部门名称</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" maxlength="255" bindinput="inputChange" class="input" value='{{deptName}}' focus='true' placeholder="请输入部门名称"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCreateFolderCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onCreateFolderConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

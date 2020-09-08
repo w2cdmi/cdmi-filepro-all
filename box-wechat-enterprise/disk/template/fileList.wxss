@@ -1,0 +1,249 @@
+/* 标签样式 */
+
+label {
+  display: block;
+  line-height: 50rpx;
+  height: 50rpx;
+  overflow: hidden;
+  width: 400rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  font-size: 28rpx;
+}
+
+text {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #999;
+  display: block;
+  text-align: left;
+}
+
+/* 页面布局 */
+
+.margin-right {
+  margin-right: 10rpx;
+}
+
+.margin-top {
+  margin-top: 20rpx;
+}
+
+/* 文件信息 */
+
+.file-group {
+  height: 90rpx;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.img-icon {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.file-info {
+  height: 90rpx;
+  /* width: 100%; */
+}
+
+.border-bottom {
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.button-size {
+  width: 120rpx;
+  height: 90rpx;
+}
+
+.button-size image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+
+.weui-cell_active {
+  background-color: #ececec;
+}
+
+.clear-button-style {
+  background-color: rgba(255, 0, 0, 0);
+}
+
+/*scroll-view  to left*/
+
+.cell_2_body_content {
+  padding: 0 20rpx;
+  line-height: 100rpx;
+}
+
+.cell_2_cancel, .cell_2_delete, .cell_2_delete2 {
+  position: absolute;
+  top: 0;
+  font-size: 26rpx;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 153rpx;
+  text-align: center;
+}
+
+.cell_2_cancel {
+  right: -120rpx;
+  background: #ececec;
+  color: #7c7c7c;
+}
+
+.cell_2_delete {
+  right: -240rpx;
+  background: #f6a623;
+  color: #fff;
+}
+
+.cell_2_delete2 {
+  right: -202rpx;
+  height: 132rpx;
+  background: #f6a623;
+  color: #fff;
+  width: 200rpx;
+  overflow: hidden;
+  line-height: 132rpx;
+  font-size: 35rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.item-info {
+  float: left;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.checkbox {
+  margin-right: 20rpx;
+}
+
+.checkbox label {
+  border-radius: 50%;
+  border: 1rpx solid #999;
+  width: 43rpx;
+  height: 43rpx;
+}
+
+.sharemenu {
+  width: 100%;
+  height: 98rpx;
+  background: rgba(246, 246, 246, 1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1rpx #e5e5e5 solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sharemenu .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex:1;
+}
+
+.sharemenu .item .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.sharemenu .item text {
+  font-size: 20rpx;
+  font-family: SourceHanSansCN-Regular;
+  color: rgba(51, 51, 51, 1);
+}
+
+.share_menu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: rgba(51, 51, 51, 0.4);
+  z-index: 99;
+  display: flex;
+  align-items: flex-end;
+}
+
+.share_box {
+  width: 100%;
+  height: 500rpx;
+}
+
+.share_name {
+  width: 100%;
+  height: 60rpx;
+  background: rgba(248, 248, 248, 1);
+  border-radius: 10rpx;
+}
+
+.share_name input {
+  /* text-indent: 20rpx; */
+  padding-left: 20rpx;
+  padding-left: 20px;
+}
+.share{
+  background: #FFF;
+  padding: 10rpx;
+  box-sizing: border-box;
+  /* box-sizing: content-box */
+} 
+/* .input_placeholder {
+  text-indent: 20rpx;
+
+} */
+ .share_info{
+  width: 100%;
+}
+.share_info .item{
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  align-items: center;
+  color:rgba(51,51,51,1);
+}
+.share_info .item .title{
+  width: 200rpx;
+}
+.share_info .item .checked{
+  color:rgba(51,51,51,1);
+}
+.share_info .item .lists{
+    /* display: flex;
+    justify-content: space-around; */
+    width: 540rpx;
+    color:rgba(102,102,102,1);
+}
+.share_info .item .lists view{
+  width: 170rpx;
+  float: left;
+  /* margin-left: 20rpx; */
+}
+.share_button{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #FFF;
+  color:rgba(51,51,51,1);
+}

@@ -1,0 +1,2 @@
+/**引入chat的样式**/
+@import "../chat/chat.wxss";

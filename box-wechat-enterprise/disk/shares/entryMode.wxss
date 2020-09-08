@@ -1,0 +1,41 @@
+/* disk/enterprise/bindAccount.wxss */
+page{
+    height: 100%;
+    margin: 0;
+}
+.page{
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: #F5F5F5;
+    height: 100%;
+}
+.account-bind-description{
+    background: #FFFFFF;
+    padding: 10px 15px;
+    color: #F64D30;
+    letter-spacing: 2px;
+}
+.main{
+    padding: 0 15px;
+}
+.form-btn-sbt{
+    width:100%;
+    font-size:14px;
+    background:#EA5036;
+    color:#FFFFFF;
+    margin:100px 0 10px 0;
+    height:40px;
+    line-height:40px;
+}
+.no-account-link{
+    margin-top: 50px;
+    color: #29B6F6;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.tourist-tips{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999999;
+}

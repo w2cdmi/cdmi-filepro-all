@@ -1,0 +1,37 @@
+<import src="/disk/template/fileList.wxml" />
+<import src="/disk/template/menu.wxml" />
+<import src="/disk/template/music.wxml" />
+<view class="page">
+  <view class="weui-navbar" style='box-shadow:4px 2px 2px #F5F5F5;position:absolute;top:0px;'>
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view data-index='{{item.index}}' class="weui-navbar__item {{activeIndex == item.index ? 'weui-bar__item_on' : ''}}" catchtap="tabClick">
+        <image src='{{item.imgPath}}'></image>
+        <view class="weui-navbar__title">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="weui-tab__panel" style='padding-top:90px;'>
+    <!-- 最近浏览为空的背景图片 -->
+    <view class='blankBackground' hidden='{{data.files.length==0&&!isClearOldDate?false:true}}'>
+      <image src='./images/blank/blank-bg.png'></image>
+      <view>矮油，还没有文件</view>
+    </view>
+    <view class="weui-tab__content">
+      <template is="file-list" data="{{show_check_sharemenu,data, scrollLeft, isScrollX}}" />
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{show_check_sharemenu}}">
+  <template is="long_press_menu"  />
+</view>
+
+<view wx:if="{{sharemenu}}">
+  <template is="share_menu"  data="{{sharemenu,data}}"/>
+</view>
+
+
+
+
+<template is="menu" data="{{isShowMenuPanel, animationMenuPanel, isShowMusicButton, isOpenRobot, userIcon, isOpenRobot, animationAddPanel, isShowUpButton}}" />
+<template is="music" data="{{isShowMusicListPanel, musicCount, musics, isShowMusicPanel, playOrStopButton, musicInfoWidth, music, progressWidth, progress, currentTime, duration}}" />

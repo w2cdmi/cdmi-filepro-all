@@ -1,0 +1,30 @@
+/* disk/chat/createChat.wxss */
+label{
+    margin-top: 20px;
+    display: block;
+    color: #666666;
+}
+input{
+    height: 40px;
+    margin-top: 10px;
+    background: #FFFFFF;
+    border-radius:6px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.form-btn-sbt{
+    width:100%;
+    font-size:14px;
+    background:#EA5036;
+    color:#FFFFFF;
+    margin:20px 0;
+    height:40px;
+    line-height:40px;
+}
+.main{
+    padding:0 15px;
+    font-size:14px;
+}
+.placeholder-cls{
+    font-size:14px;
+}

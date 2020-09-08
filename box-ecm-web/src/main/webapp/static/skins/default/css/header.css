@@ -1,0 +1,150 @@
+
+.showdiv{
+    display:block ;
+}
+.hidediv{
+    display: none;
+}
+/*.container{
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+}*/
+.header{
+    height: 50px;
+	background: #333333;
+
+}
+.header>div{
+    float: left;
+}
+.h_logo{
+    width: 300px;
+    line-height: 50px;
+}
+.enterprise-name{
+	line-height: 50px;
+	color: #FFFFFF;
+	font-size: 18px;
+	position: absolute;
+	top: 0;
+	left: 50px;
+}
+.h_nav_item{
+    display: inline-block;
+    line-height: 50px;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.h_nav_item a{
+    color: #535c67;
+}
+.h_nav_item:hover{
+   text-decoration: none;
+}
+.logo-icon{
+    width: 28px;
+    height: 25px;
+    margin: 12.5px 11px;
+}
+.message-icon{
+    width: 21px;
+    height: 22px;
+}
+.header .h_right{
+    float: right;
+    height: 50px;
+}
+.header .h_right>div{
+    float: left;
+}
+.header .h_r_import{
+    margin-top: 10px;
+}
+.header .h_r_message{
+    height: 36px;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-top: 14px ;
+    position: relative;
+}
+.user-logo{
+    width: 34px;
+    height: 34px;
+    margin-top: 8px ;
+    margin-right: 5px;
+}
+.header .h_r_user{
+    height: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: 12px;
+    color: #535c67;
+    position: relative;
+    cursor: pointer;
+}
+.header .h_r_user>div{
+    float: left;
+}
+.header .toggle-user-menu{
+    width: 10px;
+    height: 5px;
+    margin-top: 22.5px;
+    margin-left: 5px;
+}
+.user-menu .user-menu-item{
+	cursor: pointer;
+}
+.header .user-menu{
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    min-width: 100px;
+    max-width: 200px;
+    max-height: 200px;
+    z-index: 10;
+    line-height: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    cursor: default;
+}
+.header .message-detail{
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 10;
+    line-height: 30px;
+    text-align: center;
+    cursor: default;
+    min-width: 100px;
+    max-width: 200px;
+    max-height: 200px;
+    font-size: 12px;
+}
+.header .message-detail>div:hover{
+    background-color: rgba(0,0,0,.3);
+}
+.user-menu>div:hover{
+    background-color: rgba(0,0,0,.3);
+}
+.message-new{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: red;
+    right: 0;
+    top: -2px;
+}

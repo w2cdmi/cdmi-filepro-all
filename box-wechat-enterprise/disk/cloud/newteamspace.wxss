@@ -1,0 +1,108 @@
+/* disk/cloud/newteamspace.wxss */
+
+.massage {
+    background: #fff;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx 40rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.form+.form {
+    border-top: 1rpx solid #f1f1f1;
+    margin-left: 40rpx;
+    padding-left: 0;
+}
+
+.wx-switch-input {
+    width: 84rpx !important;
+    height: 40rpx !important;
+    margin-right: -5rpx !important;
+}
+
+/*白色样式（false的样式）*/
+
+.wx-switch-input::before {
+    width: 82rpx !important;
+    height: 36rpx !important;
+}
+
+/*绿色样式（true的样式）*/
+
+.wx-switch-input::after {
+    width: 44rpx !important;
+    height: 36rpx !important;
+}
+
+input {
+    line-height: 80rpx;
+    margin-top: 10rpx;
+    text-align: right;
+}
+
+.muberlist {
+    margin-top: 20rpx;
+    background: #fff;
+}
+
+.muberlist .empty {
+    color: #999;
+    font-size: 22rpx;
+}
+
+.list {
+    padding: 10rpx 40rpx;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    line-height: 50px;
+    color: #666666;
+}
+
+.list .img {
+    width: 80rpx;
+    height: 80rpx;
+    vertical-align: middle;
+}
+
+.list image {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.people, .permissions {
+    /* background: red;  */
+    display: flex;
+    justify-content: space-between;
+}
+.people label{
+    margin-left: 20rpx;
+    font-size: 30rpx;
+}
+
+.permissions label {
+    margin-right: 30rpx;
+    font-size: 26rpx;
+}
+
+.permissions .img {
+    width: 30rpx;
+    height: 30rpx;
+}
+.btn {
+    background: #fff;
+    padding: 10rpx 20rpx;
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+}
+
+.btn button {
+    background: #ea5036;
+    color: #fff;
+}
